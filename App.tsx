@@ -46,13 +46,24 @@ function App(): React.JSX.Element{
   color: '#FFF'
      },
      btn:{
-
+      flex: 1,
+      justifyContent: 'center',
+      alignItems:'center',
+      backgroundColor:'#FFF',
+      height:40,
+      width:17,
+      borderRadius:20
      },
-     btnTexto:{
 
+     btnTexto:{
+       fontSize:20,
+       fontWeight: 'bold',
+       color: '#00aeef'
      },
      btnArea:{
-
+        flexDirection:'row',
+        marginTop: 130,
+        height:40,
      }
   });
 
