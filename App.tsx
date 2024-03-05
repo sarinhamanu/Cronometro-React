@@ -2,15 +2,24 @@ import React, {useState,useEffect} from 'react';
 import { Image, StyleSheet,Text,TouchableOpacity, View} from 'react-native';
 
 function App(): React.JSX.Element{
+  let ss:number=0;
+  let mm: number = 0;
+  let hh: number = 0;
+
+
+  const [botao, setBotao]= useState('iniciar');
+  const [ultimo, setUltimo]= useState('00:00:00');
+  const [ formattedTime, setFormattedTime]= useState('00:00:00');
+  const [intervaiId, setIntervalId]= useState<NodeJS.Timeout| null>(null);
   return(
     <View style={styles.container}>
  <Image source={require('./src/assets/images/crono.png')}/>
 
- <Text style={styles.timer}>00:00:00</Text>
+ <Text style={styles.timer}>{formattedTime}</Text>
 
  <View style={styles.btnArea}>
   <TouchableOpacity style={styles.btn}>
-  <Text style={styles.btnTexto}>Iniciar</Text>
+  <Text style={styles.btnTexto}>{botao}</Text>
   </TouchableOpacity>
 
   <TouchableOpacity style={styles.btn}>
@@ -29,7 +38,7 @@ function App(): React.JSX.Element{
       flex:1,
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: '#00aeef'
+      backgroundColor: '#1ED760'
     },
     areaTempo:{
      marginTop:40,
